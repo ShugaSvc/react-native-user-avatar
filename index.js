@@ -34,7 +34,8 @@ class UserAvatar extends React.PureComponent {
       size,
       style,
       defaultName,
-      radius = 0.5
+      radius = 0.5,
+      resizeMode = "cover",
     } = this.props;
 
     if (!fontDecrease) fontDecrease = 2.5;
@@ -72,7 +73,8 @@ class UserAvatar extends React.PureComponent {
 
       const props = {
         style: imageStyle,
-        source: {uri: src}
+        source: {uri: src},
+        resizeMode,
       }
 
       inner = React.createElement( this.props.component || Image, props )
